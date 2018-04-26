@@ -133,12 +133,14 @@ module Morse
     end
 
     def Morse.encode_message(message)
+        num = 0
         out = String.new
         message.split(" ").each do |word|
             word.split("").each do |char|
                 out += Morse.encode_char(char) + " "
             end
-            out += "/"
+            num += 1
+            out += "/" unless num == message.split(" ").length
         end
         out
     end
