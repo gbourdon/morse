@@ -58,7 +58,7 @@ module Morse
             raise "Invalid Character #{char}"
         end
     end
-    
+
     # Encodes the character in Morse Code
     def Morse.encode_char(char)
         char.downcase! # Deals with privaged upper-case children
@@ -128,6 +128,17 @@ module Morse
                 out += Morse.decode_char(char)
             end
             out += " "
+        end
+        out
+    end
+
+    def Morse.encode_message(message)
+        out = String.new
+        message.split(" ").each do |word|
+            word.split("").each do |char|
+                out += Morse.encode_char(char) + " "
+            end
+            out += "/"
         end
         out
     end
