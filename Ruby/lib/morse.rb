@@ -55,9 +55,10 @@ module Morse
         when "--.."
             return "z"
         else
-            raise "Invalid Character"
+            raise "Invalid Character #{char}"
         end
     end
+    
     # Encodes the character in Morse Code
     def Morse.encode_char(char)
         char.downcase! # Deals with privaged upper-case children
@@ -115,7 +116,19 @@ module Morse
         when "z"
                 return "--.."    
         else
-            raise "Invalid Character"
+            raise "Invalid Character #{char}"
         end
+    end
+
+    # Decodes a string from Morse Code using decode_char
+    def Morse.decode_message(message)
+        out = String.new
+        message.split("/").each do |word|
+            word.split(" ").each do |char|
+                out += Morse.decode_char(char)
+            end
+            out += " "
+        end
+        out
     end
 end
