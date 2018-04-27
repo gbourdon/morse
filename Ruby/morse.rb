@@ -1,12 +1,20 @@
 require_relative "lib/morse.rb"
-ERROR = "Invalid Input" # Change bloody idiot to something more appropriate
+ERROR = "Invalid Input"
 
-# Gets input from user TODO: allow input from the command line
-puts "Do you want to encode a mesage in Morse Code, or decode a message?"
-puts "1 | Encode"
-puts "2 | Decode"
-print "Mode: "
-mode = gets.chomp.to_i
+case ARGV[0]
+when "-e" 
+    mode = 1 
+when "-d"
+    mode = 2 
+else
+    # Gets input from user
+    puts "Do you want to encode a mesage in Morse Code, or decode a message?"
+    puts "1 | Encode"
+    puts "2 | Decode"
+    print "Mode: "
+    mode = gets.chomp.to_i
+end
+ARGV.clear # You need to clear the argv after using it in order to use gets. >:( (Does anyone still use emoticons these days?)
 
 raise ERROR unless (1 .. 2).to_a.include? mode # Complains about benefits.
 
