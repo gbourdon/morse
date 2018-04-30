@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1525049668 source:b:\users\gustav bourdon\documents\c\morse\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	"morse.h"
+	"utilities.h"
+
+1525048778 b:\users\gustav bourdon\documents\c\morse\morse.h
+	<iostream>
+	<string>
+	<vector>
+
+1525048745 source:b:\users\gustav bourdon\documents\c\morse\morse.cpp
+	"morse.h"
+
+1525049636 b:\users\gustav bourdon\documents\c\morse\utilities.h
+	<string>
+	<vector>
+
+1525049574 source:b:\users\gustav bourdon\documents\c\morse\utilities.cpp
+	"utilities.h"
+
