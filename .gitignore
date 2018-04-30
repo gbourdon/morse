@@ -40,5 +40,6 @@
 ehthumbs.db
 Thumbs.db
 
-# Visual Studio Stuff
-.vs
+# CodeBlocks Stuff
+C++/bin
+C++/obj
